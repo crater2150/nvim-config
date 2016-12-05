@@ -8,5 +8,3 @@ let g:rubycomplete_classes_in_global = 1
 nmap K :!ri <cword><cr>
 
 hi link rubySymbol Special
-
-source $MYVIMDIR/bundle/ri-browser/ftplugin/ri.vim
