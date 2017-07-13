@@ -36,6 +36,8 @@ Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' } | Plug 'Shougo/denite.nvim
 
 Plug 'bling/vim-airline'
 
+Plug 'vim-scripts/SyntaxRange'
+
 " ruby
 Plug 'depuracao/vim-rdoc'
 Plug 'vim-ruby/vim-ruby'
@@ -57,6 +59,8 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-markdown'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'ledger/vim-ledger'
+Plug 'elzr/vim-json'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
