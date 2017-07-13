@@ -14,8 +14,8 @@ endif
 set number
 
 set textwidth=80
-set tabstop=8
-set shiftwidth=8
+set tabstop=2
+set shiftwidth=2
 
 set whichwrap+=<,>,h,l
 
