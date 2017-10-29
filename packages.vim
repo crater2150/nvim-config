@@ -24,7 +24,7 @@ Plug 'glts/vim-textobj-comment'
 Plug 'vim-scripts/argtextobj.vim'
 
 Plug 'mhinz/vim-signify'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 
 " completion and snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -47,6 +47,7 @@ Plug 'tpope/vim-rake'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
+Plug 'gisphm/vim-gitignore'
 
 " C
 Plug 'derekwyatt/vim-fswitch'
