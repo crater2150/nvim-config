@@ -145,9 +145,9 @@ vmap <silent> gs :sort<cr>
 
 " Denite {{{
 
-call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
-map <silent> gb :<C-u>Denite -buffer-name=buffers buffer<cr>
-map <silent> gf :<C-u>Denite -buffer-name=files file_rec<cr>
+"call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
+"map <silent> gb :<C-u>Denite -buffer-name=buffers buffer<cr>
+"map <silent> gf :<C-u>Denite -buffer-name=files file_rec<cr>
 
 " }}}
 
@@ -165,5 +165,4 @@ let g:localvimrc_whitelist='/home/crater2150/code/.*'
 let g:localvimrc_sandbox=0
 
 let g:UltiSnipsEnableSnipMate = 0
-
 " vi:foldmethod=marker sw=2
