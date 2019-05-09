@@ -11,6 +11,8 @@ let $MYVIMDIR=split(&rtp, ',')[0]
 set exrc
 
 set background=dark
+let g:chroma_italic_style="bold"
+let g:chroma_nontext_dark=1
 colo chroma
 
 if exists("&cc")
@@ -27,7 +29,7 @@ set whichwrap+=<,>,h,l
 
 set notimeout
 set ttimeout
-set timeoutlen=50
+set ttimeoutlen=50
 
 set foldmethod=syntax
 
@@ -37,8 +39,6 @@ set vb t_vb=
 set shellcmdflag=-c
 set shell=/bin/zsh
 
-
-set timeoutlen=500
 set modeline
 set showcmd
 
@@ -157,25 +157,15 @@ inoremap <C-Space> <C-x><C-o>
 nmap <C-L>         :noh<cr>:redraw!<cr>
 
 nmap <F9>	   :make<CR>
-nmap <silent> <F11> :TagbarToggle<cr>
-nmap <silent> <Insert> :TagbarToggle<CR>
 nmap <leader>m  :make<CR>
 
 nmap <C-Tab> <C-w><C-w>
 imap <C-Tab> <esc><C-w><C-w>
 
-vmap <silent> gs :sort<cr>
+vmap <silent> gs :'<,'>sort<cr>
 
 "}}}
 
-
-" Denite {{{
-
-"call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
-"map <silent> gb :<C-u>Denite -buffer-name=buffers buffer<cr>
-"map <silent> gf :<C-u>Denite -buffer-name=files file_rec<cr>
-
-" }}}
 
 "Git {{{
 nmap <Leader>gu         :GitPush<CR>

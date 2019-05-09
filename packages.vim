@@ -57,8 +57,7 @@ Plug 'derekwyatt/vim-fswitch'
 
 
 "Scala
-Plug 'crater2150/vim-scala', { 'branch': 'indent-fix' }
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'derekwyatt/vim-scala'
 
 " Rust
 Plug 'racer-rust/vim-racer'
@@ -76,6 +75,8 @@ Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
 Plug 'gre/play2vim'
 Plug 'isobit/vim-caddyfile'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
