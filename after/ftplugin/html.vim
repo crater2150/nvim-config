@@ -1,1 +1,1 @@
-imap // </<C-X><C-O><esc>==A
+imap <buffer> <// </<C-X><C-O><esc>==A
