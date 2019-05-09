@@ -48,6 +48,7 @@ set hidden
 set mouse=
 
 set cursorline
+set guicursor=
 
 set undofile
 set undodir=~/.local/share/nvim/undo
@@ -113,6 +114,9 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 nnoremap <space> za
 vnoremap <silent> . :normal .<CR>
 
+nnoremap q: :q
+nnoremap <leader>: q:
+
 map <Left>  <C-w>h
 map <Down>  <C-w>j
 map <Up>    <C-w>k
@@ -123,10 +127,26 @@ map <S-Right> <C-w>>
 map <S-Down>  <C-w>-
 map <S-Up>    <C-w>+
 
+" navigate windows with alt+[hjkl]
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
 inoremap <C-U> <C-G>u<C-U>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 nnoremap Y y$
+
+inoremap <C-Space> <C-x><C-o>
 
 nmap <C-L>         :noh<cr>:redraw!<cr>
 
@@ -165,4 +185,5 @@ let g:localvimrc_whitelist='/home/crater2150/code/.*'
 let g:localvimrc_sandbox=0
 
 let g:UltiSnipsEnableSnipMate = 0
+let g:ale_completion_enabled = 1
 " vi:foldmethod=marker sw=2

@@ -25,7 +25,7 @@ Plug 'vim-scripts/argtextobj.vim'
 
 Plug 'mhinz/vim-signify'
 Plug 'neomake/neomake'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
 
 " completion and snippets
@@ -33,10 +33,9 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
-"Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' } | Plug 'Shougo/denite.nvim' 
-
 Plug '/usr/share/vim/vimfiles'
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 
 Plug 'bling/vim-airline'
 
@@ -56,11 +55,18 @@ Plug 'gisphm/vim-gitignore'
 " C
 Plug 'derekwyatt/vim-fswitch'
 
-" other filetype specific plugins
 
-Plug 'derekwyatt/vim-scala'
+"Scala
+Plug 'crater2150/vim-scala', { 'branch': 'indent-fix' }
 Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 
+" Rust
+Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'w0rp/ale'
+
+" other filetype specific plugins
 Plug 'jamessan/vim-gnupg'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-markdown'
@@ -69,6 +75,7 @@ Plug 'ledger/vim-ledger'
 Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
 Plug 'gre/play2vim'
+Plug 'isobit/vim-caddyfile'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force

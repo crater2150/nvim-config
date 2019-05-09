@@ -11,3 +11,5 @@ noremap <Leader>ri :EnInline<CR>
 noremap K :EnDocBrowse<CR>
 
 noremap <Leader>f :Autoformat<CR>
+
+au BufWritePost *.scala Neomake!
