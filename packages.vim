@@ -57,7 +57,7 @@ Plug 'derekwyatt/vim-fswitch'
 
 
 "Scala
-Plug 'derekwyatt/vim-scala'
+Plug 'crater2150/vim-scala', { 'branch': 'indent-fix' }
 
 " Rust
 Plug 'racer-rust/vim-racer'
