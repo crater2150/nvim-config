@@ -37,7 +37,7 @@ Plug '/usr/share/vim/vimfiles'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 
 Plug 'vim-scripts/SyntaxRange'
 
@@ -58,6 +58,7 @@ Plug 'derekwyatt/vim-fswitch'
 
 "Scala
 Plug 'derekwyatt/vim-scala'
+Plug 'buntec/neovim-scalavista', { 'do': ':UpdateRemotePlugins' }
 
 " Rust
 Plug 'racer-rust/vim-racer'
@@ -70,6 +71,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-markdown'
 Plug 'lervag/vimtex'
+" let g:vimtex_compiler_method = 'arara'
 Plug 'ledger/vim-ledger'
 Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
