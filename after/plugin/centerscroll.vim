@@ -1,4 +1,5 @@
 set scrolloff=99999
+set lazyredraw
 
 nnoremap <C-U> 11kzz
 nnoremap <C-D> 11jzz
