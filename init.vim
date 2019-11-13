@@ -43,6 +43,7 @@ set modeline
 set showcmd
 
 set ignorecase smartcase
+set inccommand=split
 set completeopt=menu,longest,preview
 set wildmode=list:longest,list:full
 set wildignore+=*.so,*.swp,*.zip,*.o
