@@ -30,7 +30,9 @@ Plug 'Chiel92/vim-autoformat'
 
 " completion and snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 
 Plug '/usr/share/vim/vimfiles'

@@ -44,7 +44,7 @@ set showcmd
 
 set ignorecase smartcase
 set inccommand=split
-set completeopt=menu,longest,preview
+set completeopt=menu,noinsert,preview
 set wildmode=list:longest,list:full
 set wildignore+=*.so,*.swp,*.zip,*.o
 set suffixes=.bak,~,.h,.info,.swp,.obj,.info,.aux,.dvi,.bbl,.out,.o,.lo,\.class
