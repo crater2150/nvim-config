@@ -60,16 +60,17 @@ Plug 'derekwyatt/vim-fswitch'
 
 "Scala
 Plug 'derekwyatt/vim-scala'
-Plug 'buntec/neovim-scalavista', { 'do': ':UpdateRemotePlugins' }
+"Plug 'buntec/neovim-scalavista', { 'do': ':UpdateRemotePlugins' }
 
 " Rust
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 " other filetype specific plugins
 Plug 'jamessan/vim-gnupg'
+let g:no_cecutil_maps = 1
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-markdown'
 Plug 'lervag/vimtex'
