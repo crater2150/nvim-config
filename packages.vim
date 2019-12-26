@@ -40,6 +40,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 Plug 'vim-airline/vim-airline'
+Plug 'lambdalisue/suda.vim'
 
 Plug 'vim-scripts/SyntaxRange'
 
