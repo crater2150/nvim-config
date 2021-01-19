@@ -15,4 +15,3 @@ vmap <silent> <M-a> <Plug>(coc-codeaction-selected)
 
 omap <silent> af <Plug>(coc-funcobj-a)
 omap <silent> if <Plug>(coc-funcobj-i)
-
