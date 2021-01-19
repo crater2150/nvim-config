@@ -21,6 +21,7 @@ Plug 'tpope/vim-sleuth'
 " motions and textobjects
 Plug 'kana/vim-textobj-user'
 Plug 'glts/vim-textobj-comment'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-scripts/argtextobj.vim'
 
 Plug 'mhinz/vim-signify'
@@ -28,12 +29,10 @@ Plug 'neomake/neomake'
 "Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
 
-" completion and snippets
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
+Plug 'machakann/vim-highlightedyank'
 
 Plug '/usr/share/vim/vimfiles'
 Plug 'junegunn/fzf.vim'
