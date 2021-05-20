@@ -123,6 +123,8 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 nnoremap <space> za
 vnoremap <silent> . :normal .<CR>
 
+tnoremap <C-q> <C-\><C-n>
+
 "nnoremap q: :q
 "nnoremap <leader>: q:
 nnoremap <silent> q :<C-u>call <SID>SmartQ()<CR>

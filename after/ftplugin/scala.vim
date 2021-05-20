@@ -14,3 +14,5 @@ function! s:show_documentation()
 endfunction
 
 au BufWritePost *.scala Neomake!
+
+set tw=120
