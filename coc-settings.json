@@ -1,0 +1,8 @@
+{
+  "languageserver": {
+    "turtle": {
+      "command": "turtle_lsp",
+      "filetypes": ["ttl", "turtle"]
+    }
+  }
+}
