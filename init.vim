@@ -64,6 +64,9 @@ set undodir=~/.local/share/nvim/undo
 
 set spelllang=de
 
+set termguicolors
+set pumblend=20
+
 " custom commands
 command! RC edit $MYVIMRC
 command! SRC source $MYVIMRC
