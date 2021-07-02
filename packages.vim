@@ -6,6 +6,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'Soares/smarttab.vim'
 
 Plug 'crater2150/vim-theme-chroma'
+Plug 'fladson/vim-kitty'
 
 " tim pope stuff
 Plug 'tpope/vim-abolish'
