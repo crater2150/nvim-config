@@ -207,6 +207,4 @@ let g:signify_disable_by_default = 1
 let g:localvimrc_whitelist='/home/crater2150/code/.*'
 let g:localvimrc_sandbox=0
 
-let g:UltiSnipsEnableSnipMate = 0
-let g:ale_completion_enabled = 1
 " vi:foldmethod=marker sw=2

@@ -5,15 +5,14 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'embear/vim-localvimrc'
 Plug 'Soares/smarttab.vim'
 
-Plug 'crater2150/vim-theme-chroma'
+"Plug 'crater2150/vim-theme-chroma'
+Plug '~/sources/chroma-colors/vim'
 Plug 'fladson/vim-kitty'
 
 " tim pope stuff
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
@@ -26,18 +25,14 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-scripts/argtextobj.vim'
 
 Plug 'mhinz/vim-signify'
-Plug 'neomake/neomake'
-"Plug 'vim-syntastic/syntastic'
-Plug 'Chiel92/vim-autoformat'
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'machakann/vim-highlightedyank'
 
+" for stuff installed via disto package manager, e.g. fzf's bundled vim plugin
 Plug '/usr/share/vim/vimfiles'
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/suda.vim'
@@ -51,23 +46,10 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 
 " git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 Plug 'gregsexton/gitv'
 Plug 'gisphm/vim-gitignore'
-
-" C
-Plug 'derekwyatt/vim-fswitch'
-
-
-"Scala
-Plug 'derekwyatt/vim-scala'
-"Plug 'buntec/neovim-scalavista', { 'do': ':UpdateRemotePlugins' }
-
-" Rust
-Plug 'racer-rust/vim-racer'
-Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
-"Plug 'w0rp/ale'
 
 " other filetype specific plugins
 Plug 'jamessan/vim-gnupg'
