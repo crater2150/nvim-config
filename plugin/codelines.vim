@@ -4,4 +4,4 @@ function! codelines#close()
 endfunction
 
 inoremap <silent> <Plug>(codelines-close) <c-r>=codelines#close()<cr>
-noremap <silent> <Plug>(codelines-go-to-def) :exec "vimgrep #//>" . strpart(expand('<cword>'), 3) . "# code/*"<cr>
+noremap <silent> <Plug>(codelines-go-to-def) <cmd>exec "vimgrep #//>" . strpart(expand('<cword>'), 3) . "# code/*"<cr>

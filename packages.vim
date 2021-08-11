@@ -3,7 +3,6 @@ call plug#begin(expand('<sfile>:p:h') . '/plugged')
 " basic stuff
 Plug 'pbrisbin/vim-mkdir'
 Plug 'embear/vim-localvimrc'
-Plug 'Soares/smarttab.vim'
 
 "Plug 'crater2150/vim-theme-chroma'
 Plug '~/sources/chroma-colors/vim'
@@ -26,7 +25,26 @@ Plug 'vim-scripts/argtextobj.vim'
 
 Plug 'mhinz/vim-signify'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" LSP
+
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'scalameta/nvim-metals'
+" Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
+Plug 'nvim-lua/lsp-status.nvim'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-lsputils'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'L3MON4D3/LuaSnip'
+
 
 Plug 'machakann/vim-highlightedyank'
 

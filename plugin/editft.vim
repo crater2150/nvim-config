@@ -4,5 +4,5 @@ function! s:editft()
   exec "autocmd QuitPre <buffer> source " . ftpl
 endfunction
 
-noremap <silent> <Plug>(EditFT) :call <SID>editft()<cr>
+noremap <silent> <Plug>(EditFT) <cmd>call <SID>editft()<cr>
 map <leader>ftp <Plug>(EditFT)

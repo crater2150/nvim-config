@@ -32,6 +32,7 @@ set ttimeout
 set ttimeoutlen=50
 
 set foldmethod=syntax
+set foldlevelstart=99
 
 " disables visualbell
 set vb t_vb=
@@ -51,8 +52,12 @@ set suffixes+=.pdf
 set wildmenu
 set hidden
 
-set completeopt=menu,noinsert,preview
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" set completeopt=menu,noinsert,preview
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 set mouse=
 
@@ -66,6 +71,8 @@ set spelllang=de
 
 set termguicolors
 set pumblend=20
+
+set updatetime=300
 
 " custom commands
 command! RC edit $MYVIMRC
@@ -109,46 +116,12 @@ augroup END
 
 "}}}
 
-"{{{ c header gates
-function! s:insert_gates()
-	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
-	execute "normal! i#ifndef " . gatename
-	execute "normal! o#define " . gatename
-	execute "normal! Go#endif /* " . gatename . " */"
-	normal! kk
-endfunction
-autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
-
-"}}}
-
 " common mappings {{{
 
 nnoremap <space> za
-vnoremap <silent> . :normal .<CR>
+vnoremap <silent> . <cmd>normal .<CR>
 
 tnoremap <C-q> <C-\><C-n>
-
-"nnoremap q: :q
-"nnoremap <leader>: q:
-nnoremap <silent> q :<C-u>call <SID>SmartQ()<CR>
-function! s:SmartQ()
-  if exists("g:recording_macro")
-    let r = g:recording_macro
-    unlet g:recording_macro
-    normal! q
-    execute 'let @'.r.' = @'.r.'[:-2]'
-  else
-    let c = nr2char(getchar())
-    if c == ':'
-      call feedkeys(":q")
-    else
-      if c =~ '\v[0-9a-zA-Z"]'
-        let g:recording_macro = c
-      endif
-      execute 'normal! q'.c
-    endif
-  endif
-endfunction
 
 map <Left>  <C-w>h
 map <Down>  <C-w>j
@@ -181,30 +154,31 @@ nnoremap Y y$
 
 inoremap <C-Space> <C-x><C-o>
 
-nmap <C-L>         :noh<cr>:redraw!<cr>
-
-nmap <F9>	   :make<CR>
-nmap <leader>m  :make<CR>
+nmap <C-L>         <cmd>noh<cr><cmd>redraw!<cr>
 
 nmap <C-Tab> <C-w><C-w>
 imap <C-Tab> <esc><C-w><C-w>
 
-vmap <silent> gs :'<,'>sort<cr>
+vmap <silent> gs <cmd>'<,'>sort<cr>
 
 "}}}
 
 
 "Git {{{
-nmap <Leader>gu         :GitPush<CR>
-nmap <Leader>gvc        :!git svn dcommit<CR>
-nmap <Leader>gvf        :!git svn fetch<CR>
+nmap <Leader>gu         <cmd>Gina push<CR>
+nmap <Leader>gvc        <cmd>!git svn dcommit<CR>
+nmap <Leader>gvf        <cmd>!git svn fetch<CR>
 " Git }}}
 
 let g:signify_vcs_list = [ 'git', 'hg' ]
-let g:signify_disable_by_default = 1
+"let g:signify_disable_by_default = 1
 
 
-let g:localvimrc_whitelist='/home/crater2150/code/.*'
+let g:localvimrc_whitelist='/home/crater2150/work/.*'
 let g:localvimrc_sandbox=0
 
+lua require("my-lsp")
+lua require("lsputils")
+"lua require("conf.compe")
+lua require("conf.trouble")
 " vi:foldmethod=marker sw=2
