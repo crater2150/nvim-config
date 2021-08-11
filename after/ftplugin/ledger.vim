@@ -1,9 +1,8 @@
 set textwidth=0
-
+inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+vnoremap <silent> <buffer> <Tab> :LedgerAlign<CR>
 inoremap <S-TAB> <TAB>
-inoremap <TAB> <C-R>=SmartTab()<CR>
-inoremap <BS> <C-R>=SmartDelete()<CR>
 noremap { ?^\d<CR>
 noremap } /^\d<CR>
-noremap <leader>F :%LedgerAlign<cr>
-noremap <leader>f :LedgerAlign<cr>
+noremap <leader>F <cmd>%LedgerAlign<cr>
+noremap <leader>f <cmd>LedgerAlign<cr>
