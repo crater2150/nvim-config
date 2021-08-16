@@ -39,11 +39,13 @@ syn sync minlines=200 maxlines=1000
 
 syn keyword scalaKeyword catch do else final finally for forSome if then
 syn keyword scalaKeyword match return throw try while yield macro extension
-syn keyword scalaKeyword as end export
+syn keyword scalaKeyword as export
 syn keyword scalaKeyword class trait object extends with derives nextgroup=scalaInstanceDeclaration skipwhite
 syn keyword scalaKeyword case nextgroup=scalaKeyword,scalaCaseFollowing skipwhite
 syn keyword scalaKeyword val nextgroup=scalaNameDefinition,scalaQuasiQuotes skipwhite
 syn keyword scalaKeyword def var nextgroup=scalaNameDefinition skipwhite
+" end is a soft keyword that should only occur as first word in a line
+syn match scalaKeyword /^\s*\zsend\ze\(\s\+.*\)\?$/
 hi link scalaKeyword Keyword
 
 exe 'syn region scalaBlock start=/{/ end=/}/ contains=' . s:ContainedGroup() . ' fold'
