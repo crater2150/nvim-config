@@ -83,12 +83,14 @@ Plug 'tpope/vim-markdown'
 Plug 'lervag/vimtex'
 " let g:vimtex_compiler_method = 'arara'
 Plug 'ledger/vim-ledger'
+Plug 'anekos/hledger-vim'
 Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
 Plug 'gre/play2vim'
 Plug 'isobit/vim-caddyfile'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'GEverding/vim-hocon'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force

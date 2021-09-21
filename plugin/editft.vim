@@ -5,4 +5,4 @@ function! s:editft()
 endfunction
 
 noremap <silent> <Plug>(EditFT) <cmd>call <SID>editft()<cr>
-map <leader>ftp <Plug>(EditFT)
+map <leader><leader>ftp <Plug>(EditFT)
