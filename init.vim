@@ -55,8 +55,6 @@ set hidden
 " set completeopt=menu,noinsert,preview
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
-imap <tab> <Plug>(completion_smart_tab)
-imap <s-tab> <Plug>(completion_smart_s_tab)
 inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 set mouse=
@@ -180,5 +178,6 @@ let g:localvimrc_sandbox=0
 lua require("my-lsp")
 lua require("lsputils")
 "lua require("conf.compe")
+lua require("conf.cmp")
 lua require("conf.trouble")
 " vi:foldmethod=marker sw=2

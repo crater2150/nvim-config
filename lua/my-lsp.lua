@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 	buf_set_keymap('n', '<M-q>', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 	buf_set_keymap("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	require'completion'.on_attach(client, bufnr)
+	--require'completion'.on_attach(client, bufnr)
 end
 
 

@@ -4,8 +4,8 @@ call plug#begin(expand('<sfile>:p:h') . '/plugged')
 Plug 'pbrisbin/vim-mkdir'
 Plug 'embear/vim-localvimrc'
 
-"Plug 'crater2150/vim-theme-chroma'
-Plug '~/sources/chroma-colors/vim'
+Plug 'crater2150/vim-theme-chroma'
+"Plug '~/sources/chroma-colors/vim'
 Plug 'fladson/vim-kitty'
 
 " tim pope stuff
@@ -31,8 +31,14 @@ Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'scalameta/nvim-metals'
-" Plug 'hrsh7th/nvim-compe'
-Plug 'nvim-lua/completion-nvim'
+"Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+"Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'RishabhRD/popfix'
