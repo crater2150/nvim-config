@@ -29,7 +29,7 @@ Plug 'mhinz/vim-signify'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'scalameta/nvim-metals'
 "Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/nvim-cmp'

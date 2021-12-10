@@ -1,4 +1,5 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
 
 -- enable snippet support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -42,17 +43,19 @@ local on_attach = function(client, bufnr)
 	--require'completion'.on_attach(client, bufnr)
 end
 
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
-require'lspinstall'.setup() -- important
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
-
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
 
 metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
@@ -68,7 +71,7 @@ vim.cmd [[augroup end]]
 -- map buffer local keybindings when the language server attaches
 local servers = { "lemminx" }
 for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup {
+	lspconfig[lsp].setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		flags = {
