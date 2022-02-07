@@ -79,6 +79,7 @@ command! SRC source $MYVIMRC
 command! CD :cd %:h
 command! PlugEdit edit $MYVIMDIR/packages.vim
 command! PlugReload source $MYVIMDIR/packages.vim | PlugInstall
+command! TrailingSpace %s/\s*$//g
 
 
 "{{{ latex
