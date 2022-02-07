@@ -13,12 +13,19 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'path' },
+    --{ name = 'buffer' },
+    { name = 'vsnip' },
+    --{ name = 'path' },
   }
 })
 local capabilities = vim.lsp.protocol.make_client_capabilities()

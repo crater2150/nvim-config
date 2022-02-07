@@ -16,7 +16,7 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-
+"
 " motions and textobjects
 Plug 'kana/vim-textobj-user'
 Plug 'glts/vim-textobj-comment'
@@ -26,18 +26,25 @@ Plug 'vim-scripts/argtextobj.vim'
 Plug 'mhinz/vim-signify'
 
 " LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'scalameta/nvim-metals'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'scalameta/nvim-metals'
-"Plug 'hrsh7th/nvim-compe'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 "Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-lua/lsp-status.nvim'
@@ -49,8 +56,6 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'L3MON4D3/LuaSnip'
-
 
 Plug 'machakann/vim-highlightedyank'
 
@@ -70,10 +75,10 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 
 " git
-"Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/gina.vim'
 Plug 'gregsexton/gitv'
 Plug 'gisphm/vim-gitignore'
+Plug 'sjl/splice.vim'
 
 " other filetype specific plugins
 Plug 'jamessan/vim-gnupg'

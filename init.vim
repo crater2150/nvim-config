@@ -52,8 +52,9 @@ set suffixes+=.pdf
 set wildmenu
 set hidden
 
-" set completeopt=menu,noinsert,preview
-set completeopt=menuone,noinsert,noselect
+"set completeopt=menu,noinsert,preview
+"set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 set shortmess+=c
 inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -177,7 +178,6 @@ let g:localvimrc_sandbox=0
 
 lua require("my-lsp")
 lua require("lsputils")
-"lua require("conf.compe")
 lua require("conf.cmp")
 lua require("conf.trouble")
 " vi:foldmethod=marker sw=2
