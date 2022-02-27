@@ -87,6 +87,7 @@ Plug 'isobit/vim-caddyfile'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'GEverding/vim-hocon'
+Plug 'nfnty/vim-nftables'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
