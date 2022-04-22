@@ -59,10 +59,11 @@ metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = { showImplicitArguments = true }
 metals_config.on_attach = on_attach
-metals_config.capabilities = capabilities
+metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
+vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
 vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
 vim.cmd [[augroup end]]
 
