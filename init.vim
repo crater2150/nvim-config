@@ -146,6 +146,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+nnoremap <M-[> :call search('^[^[:space:])\]}]', 'be')<cr>
+nnoremap <M-]> :call search('^[^[:space:])\]}]', 'e')<cr>
+
 inoremap <C-U> <C-G>u<C-U>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
