@@ -3,16 +3,16 @@ local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
 -- enable snippet support
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
-capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
+--local capabilities = vim.lsp.protocol.make_client_capabilities()
+--capabilities.textDocument.completion.completionItem.snippetSupport = true
+--capabilities.textDocument.completion.completionItem.resolveSupport = {
+--  properties = {
+--    'documentation',
+--    'detail',
+--    'additionalTextEdits',
+--  }
+--}
+--capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -48,24 +48,9 @@ local on_attach = function(client, bufnr)
 	--require'completion'.on_attach(client, bufnr)
 end
 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
+require("lsp.metals")(on_attach)
 
-    server:setup(opts)
-end)
-
-metals_config = require("metals").bare_config()
-metals_config.init_options.statusBarProvider = "on"
-metals_config.settings = { showImplicitArguments = true }
-metals_config.on_attach = on_attach
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
-vim.cmd [[augroup lsp]]
-vim.cmd [[au!]]
-vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
-vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
-vim.cmd [[augroup end]]
+require("lsp.typescript")(on_attach)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

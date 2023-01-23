@@ -184,4 +184,8 @@ lua require("my-lsp")
 lua require("lsputils")
 lua require("conf.cmp")
 lua require("conf.trouble")
+lua require("conf.treesitter")
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable                     " Disable folding at startup.
 " vi:foldmethod=marker sw=2
