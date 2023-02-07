@@ -8,22 +8,22 @@ Plug 'crater2150/vim-theme-chroma'
 "Plug '~/sources/chroma-colors/vim'
 Plug 'fladson/vim-kitty'
 
+" generic
+Plug 'ryicoh/deepl.vim'
+
 " tim pope stuff
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-repeat'       " . for commands from plugins
+Plug 'tpope/vim-surround'     " add/remove braces,quotes,...
+Plug 'tpope/vim-characterize' " More info in ga output
+Plug 'tpope/vim-eunuch'       " :Delete, :Move, etc.
+Plug 'tpope/vim-commentary'   " gc operator
+Plug 'tpope/vim-sleuth'       " detect shiftwidth/expandtab
 "
 " motions and textobjects
-Plug 'kana/vim-textobj-user'
-Plug 'glts/vim-textobj-comment'
+Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment' " ic / ac
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-scripts/argtextobj.vim'
 
-"Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 
 " LSP
@@ -55,6 +55,8 @@ Plug 'gbrlsnchs/telescope-lsp-handlers.nvim'
 
 Plug 'machakann/vim-highlightedyank'
 
+Plug 'junegunn/vim-easy-align'
+
 " for stuff installed via disto package manager, e.g. fzf's bundled vim plugin
 Plug '/usr/share/vim/vimfiles'
 Plug 'junegunn/fzf.vim'
@@ -63,6 +65,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/suda.vim'
 
 Plug 'vim-scripts/SyntaxRange'
+
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " ruby
 Plug 'depuracao/vim-rdoc'
@@ -75,6 +79,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'gregsexton/gitv'
 Plug 'gisphm/vim-gitignore'
 Plug 'sjl/splice.vim'
+
 
 " other filetype specific plugins
 Plug 'jamessan/vim-gnupg'

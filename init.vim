@@ -174,6 +174,12 @@ nmap <Leader>gvc        <cmd>!git svn dcommit<CR>
 nmap <Leader>gvf        <cmd>!git svn fetch<CR>
 " Git }}}
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <M-a> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap <M-a> <Plug>(EasyAlign)
+
 let g:signify_vcs_list = [ 'git', 'hg' ]
 "let g:signify_disable_by_default = 1
 
@@ -189,4 +195,5 @@ lua require("conf.treesitter")
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                     " Disable folding at startup.
+lua require("conf.indent-blankline")
 " vi:foldmethod=marker sw=2
