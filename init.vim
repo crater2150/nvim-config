@@ -120,6 +120,7 @@ augroup END
 
 nnoremap <space> za
 vnoremap <silent> . <cmd>normal .<CR>
+noremap cy "*y
 
 tnoremap <C-q> <C-\><C-n>
 
