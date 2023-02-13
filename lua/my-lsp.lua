@@ -17,14 +17,15 @@ lsp_status.register_progress()
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+	local function buf_set_keymap(...) vim.keymap.set(...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
 	--Enable completion triggered by <c-x><c-o>
-	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+	vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	-- Mappings.
-	local opts = { noremap=true, silent=true }
+	local opts = { noremap=true, silent=true, buffer=bufnr }
+	local loud = { noremap=true, buffer=bufnr }
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -35,13 +36,21 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 	buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 	buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-	buf_set_keymap('n', '<M-a>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	buf_set_keymap('n', '<M-a>', '<cmd>lua vim.lsp.buf.code_action()<CR>', loud)
+	buf_set_keymap('n', '<M-l>', '<cmd>lua vim.codelens.run()<CR>', loud)
 	buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 	buf_set_keymap('n', '<M-e>', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 	buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 	buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 	buf_set_keymap('n', '<M-q>', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 	buf_set_keymap("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "<leader>dc", function() require("dap").continue() end, opts)
+	buf_set_keymap("n", "<leader>dr", function() require("dap").repl.toggle() end, opts)
+	buf_set_keymap("n", "<leader>dK", function() require("dap.ui.widgets").hover() end, opts)
+	buf_set_keymap("n", "<leader>dt", function() require("dap").toggle_breakpoint() end, opts)
+	buf_set_keymap("n", "<leader>dso", function() require("dap").step_over() end, opts)
+	buf_set_keymap("n", "<leader>dsi", function() require("dap").step_into() end, opts)
+	buf_set_keymap("n", "<leader>dl", function() require("dap").run_last() end, opts)
 
 	lsp_status.on_attach(client)
 

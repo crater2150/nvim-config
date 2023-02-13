@@ -52,6 +52,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'gbrlsnchs/telescope-lsp-handlers.nvim'
 
+Plug 'mfussenegger/nvim-dap'
+
 
 Plug 'machakann/vim-highlightedyank'
 
