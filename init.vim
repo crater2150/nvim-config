@@ -188,7 +188,6 @@ let g:localvimrc_whitelist='/home/crater2150/work/.*'
 let g:localvimrc_sandbox=0
 
 lua require("my-lsp")
-lua require("lsputils")
 lua require("conf.cmp")
 lua require("conf.trouble")
 lua require("conf.treesitter")
