@@ -10,6 +10,7 @@ Plug 'fladson/vim-kitty'
 
 " generic
 Plug 'ryicoh/deepl.vim'
+Plug 'tsuyoshicho/vim-pass'
 
 " tim pope stuff
 Plug 'tpope/vim-repeat'       " . for commands from plugins
