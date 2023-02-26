@@ -194,5 +194,6 @@ lua require("conf.treesitter")
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                     " Disable folding at startup.
+lua require("conf.telescope")
 lua require("conf.indent-blankline")
 " vi:foldmethod=marker sw=2
