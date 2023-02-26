@@ -39,7 +39,8 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'scalameta/nvim-metals'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/lsp-status.nvim'
@@ -52,6 +53,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'gbrlsnchs/telescope-lsp-handlers.nvim'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'mfussenegger/nvim-jdtls'
 
 Plug 'mfussenegger/nvim-dap'
 

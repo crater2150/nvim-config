@@ -1,8 +1,39 @@
-local status, lsp_installer = pcall(require,"nvim-lsp-installer")
-if (not status) then return end
+local status1, mason = pcall(require, "mason")
+local status2, mason_lspconfig = pcall(require, "mason-lspconfig")
+if (not (status1 and status2)) then return end
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
+return function(on_attach)
+  mason.setup {}
+  mason_lspconfig.setup {
+    ensure_installed = { 'jdtls', 'lua_ls' }
+  }
 
-    server:setup(opts)
-end)
+  local no_autosetup = {
+    jdtls = true
+  }
+
+  local extra_config = {
+    lua_ls = {
+      on_attach = on_attach,
+      settings = {
+        Lua = {
+          diagnostics = { globals = { 'vim' } },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+          telemetry = { enable = false },
+        },
+      },
+    }
+  }
+
+  mason_lspconfig.setup_handlers {
+    function(server_name)
+      if (not no_autosetup[server_name]) then
+        require("lspconfig")[server_name].setup(
+          extra_config[server_name] or { on_attach = on_attach }
+        )
+      end
+    end,
+  }
+end
