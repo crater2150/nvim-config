@@ -187,13 +187,7 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:localvimrc_whitelist='/home/crater2150/work/.*'
 let g:localvimrc_sandbox=0
 
-lua require("my-lsp")
-lua require("conf.cmp")
-lua require("conf.trouble")
-lua require("conf.treesitter")
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                     " Disable folding at startup.
-lua require("conf.telescope")
-lua require("conf.indent-blankline")
 " vi:foldmethod=marker sw=2
