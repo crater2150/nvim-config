@@ -41,6 +41,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'scalameta/nvim-metals'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'onsails/lspkind.nvim'
+
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/lsp-status.nvim'
