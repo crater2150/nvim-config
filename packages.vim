@@ -58,6 +58,8 @@ Plug 'mfussenegger/nvim-jdtls'
 
 Plug 'mfussenegger/nvim-dap'
 
+Plug 'zbirenbaum/copilot.lua'
+Plug 'zbirenbaum/copilot-cmp'
 
 Plug 'machakann/vim-highlightedyank'
 
