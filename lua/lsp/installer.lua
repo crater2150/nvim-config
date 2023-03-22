@@ -25,6 +25,17 @@ return function(on_attach)
           telemetry = { enable = false },
         },
       },
+    },
+    ["pylsp"] = {
+      on_attach = on_attach,
+      settings = {
+        pylsp = {
+          plugins = {
+            rope_autoimport = { enabled = true, },
+            isort = { enabled = true, },
+          }
+        }
+      }
     }
   }
 
