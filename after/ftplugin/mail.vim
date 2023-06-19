@@ -1,3 +1,3 @@
 iabbr mfg Mit freundlichen Grüßen
-
-set fdl=99
+setlocal spell
+setlocal fdl=99

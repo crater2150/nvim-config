@@ -1,4 +1,3 @@
-local mylsp = require("my-lsp")
 local path = require("mason-core.path")
 
 local function mason_package(...)
@@ -14,7 +13,6 @@ require('jdtls').start_or_attach({
 	on_attach = function(client, bufnr)
 		require'jdtls.setup'.add_commands()
 		require'jdtls'.setup_dap()
-		mylsp.on_attach(client, bufnr)
 	end,
 	init_options = {
 		bundles = extra_bundles
