@@ -35,10 +35,6 @@ return {
 	'folke/lsp-colors.nvim',
 	'nvim-lua/popup.nvim',
 
-	'zbirenbaum/copilot.lua',
-	{'zbirenbaum/copilot-cmp',
-		dependencies = { "hrsh7th/nvim-cmp" },
-	},
 	'junegunn/vim-easy-align',
 	'machakann/vim-highlightedyank',
 	'vim-airline/vim-airline',
