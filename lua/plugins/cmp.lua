@@ -16,6 +16,24 @@ return {
       'hrsh7th/vim-vsnip',
       'hrsh7th/vim-vsnip-integ',
       'onsails/lspkind.nvim',
+      {
+        'zbirenbaum/copilot-cmp',
+        dependencies = { "hrsh7th/nvim-cmp",
+          {
+            'zbirenbaum/copilot.lua',
+            opts = {
+              suggestion = { enabled = false },
+              panel = { enabled = false },
+              filetypes = {
+                mail = false,
+              }
+            }
+          }
+        },
+        config = function ()
+          require("copilot_cmp").setup()
+        end
+      },
     },
     config = function()
       local cmp = require('cmp')
@@ -33,7 +51,7 @@ return {
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.close(),
-          ['<CR>'] = cmp.mapping.confirm({
+          ['<C-CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }),
@@ -63,20 +81,5 @@ return {
         },
       })
     end,
-  },
-  {
-    'zbirenbaum/copilot-cmp',
-    dependencies = { "hrsh7th/nvim-cmp",
-      {
-        'zbirenbaum/copilot.lua',
-        opts = {
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            mail = false,
-          }
-        }
-      }
-    },
   },
 }
