@@ -26,6 +26,7 @@ return {
               panel = { enabled = false },
               filetypes = {
                 mail = false,
+                text = false,
               }
             }
           }
