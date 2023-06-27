@@ -29,7 +29,6 @@ return {
 			require('lsp_signature').setup({})
 		end
 	},
-	'nvim-lua/lsp-status.nvim',
 	'kyazdani42/nvim-web-devicons',
 	'folke/trouble.nvim',
 	'folke/lsp-colors.nvim',
@@ -37,7 +36,6 @@ return {
 
 	'junegunn/vim-easy-align',
 	'machakann/vim-highlightedyank',
-	'vim-airline/vim-airline',
 	'lukas-reineke/indent-blankline.nvim',
 	'lambdalisue/suda.vim',
 	-- git
@@ -47,7 +45,13 @@ return {
 	'sjl/splice.vim',
 	'jamessan/vim-gnupg',
 
-	'lervag/vimtex',
+	{'lervag/vimtex',
+		init = function()
+			vim.g.tex_conceal="agm"
+			vim.g.vimtex_quickfix_ignorefilters = { 'overfull', 'underfull' }
+		end,
+		ft = "tex",
+	},
 	'ledger/vim-ledger',
 	'anekos/hledger-vim',
 

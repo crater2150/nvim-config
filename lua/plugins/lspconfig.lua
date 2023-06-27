@@ -8,6 +8,7 @@ return {
       { "folke/neodev.nvim",  opts = {} },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      'nvim-lua/lsp-status.nvim',
       {
         "hrsh7th/cmp-nvim-lsp",
         cond = function()
@@ -16,7 +17,7 @@ return {
       },
     },
     ---@class PluginLspOpts
-    opts = {
+    opts = function() return {
       -- options for vim.diagnostic.config()
       diagnostics = {
         underline = true,
@@ -32,7 +33,7 @@ return {
         severity_sort = true,
       },
       -- add any global capabilities here
-      capabilities = {},
+      capabilities = { require'lsp-status'.capabilities },
       servers = {
         jsonls = {},
         lua_ls = {
@@ -71,7 +72,7 @@ return {
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
       },
-    },
+    } end,
     ---@param opts PluginLspOpts
     config = function(_, opts)
       -- diagnostics
@@ -196,5 +197,11 @@ return {
     end,
   },
   'mfussenegger/nvim-jdtls',
+  {'nvim-lua/lsp-status.nvim',
+    config = function(_, opts)
+      local lsp_status = require('lsp-status')
+      lsp_status.register_progress()
+    end
+  }
 }
 

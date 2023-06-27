@@ -1,11 +1,3 @@
-if exists("&cole")
-  " conceal" Use conceal vim 7.3 feature:
-  set cole=0	" conceal level
-  " Conceal in tex file: "admgs", a=accents, d=delimiters, m=math symbols,
-  " g=Greek, s=superscripts/subscripts:
-  let g:tex_conceal="agm"
-endif
-
 imap <buffer> [[         \begin{<C-x><C-o>
 imap <buffer> ]]         <Plug>(vimtex-delim-close)
 imap <buffer> [(         \left(

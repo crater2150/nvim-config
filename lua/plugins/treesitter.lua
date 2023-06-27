@@ -28,7 +28,7 @@ return {
     },
     keys = {
       { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Decrement selection", mode = "x" },
+      { "<bs>",      desc = "Decrement selection", mode = "x" },
     },
     ---@type TSConfig
     opts = {
@@ -76,13 +76,28 @@ return {
           end
           added[lang] = true
           return true
-        end, opts.ensure_installed)
+        end, opts.ensure_installed --[[@as string[] ]])
       end
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
   { 'nvim-treesitter/playground',
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = 'TSPlaygroundToggle'
   },
+  { "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    cmd = { 'TSContextEnable', 'TSContextDisable', 'TSContextToggle' },
+    keys = {
+      { "[c", function() require("treesitter-context").go_to_context() end, desc = "Go to context start" },
+    },
+    opts = { enable = true },
+    config = function(_, opts)
+      require'treesitter-context'.setup(opts)
+      vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "#555555" })
+      vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { link = "Special" })
+    end,
+  }
 
 }

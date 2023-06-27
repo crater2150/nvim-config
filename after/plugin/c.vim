@@ -1,4 +1,3 @@
-
 "{{{ c header gates
 function! s:insert_gates()
 	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
@@ -8,5 +7,4 @@ function! s:insert_gates()
 	normal! kk
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
-
 "}}}
