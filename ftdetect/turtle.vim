@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.ttl set filetype=rdf-turtle
+au BufRead,BufNewFile *.ttl set filetype=rdf_turtle
