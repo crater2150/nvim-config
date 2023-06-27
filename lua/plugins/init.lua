@@ -6,9 +6,10 @@ return {
 	'tpope/vim-repeat',
 	'tpope/vim-surround',
 	'tpope/vim-characterize',
-	'tpope/vim-eunuch',
 	'tpope/vim-commentary',
 	'tpope/vim-sleuth',
+
+	{"chrisgrieser/nvim-genghis", dependencies = "stevearc/dressing.nvim"},
 
 	-- ic / ac
 	{'glts/vim-textobj-comment',
