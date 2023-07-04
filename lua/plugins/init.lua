@@ -37,7 +37,6 @@ return {
 
 	'junegunn/vim-easy-align',
 	'machakann/vim-highlightedyank',
-	'lukas-reineke/indent-blankline.nvim',
 	'lambdalisue/suda.vim',
 	-- git
 	'lambdalisue/gina.vim',
