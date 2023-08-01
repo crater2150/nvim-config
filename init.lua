@@ -7,17 +7,23 @@ end
 -- lazy.nvim bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+	dev = {
+		path = "~/projects/nvim/",
+		patterns = {"crater2150"},
+		fallback = true
+	}
+})
 
 vim.opt.background = "dark"
 vim.g.chroma_italic_style = "bold"
@@ -34,9 +40,6 @@ vim.opt.whichwrap = "b,s,<,>,[,],h,l"
 
 vim.opt.timeout = false
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldlevelstart = 99
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldenable = false
 
 -- todo visualbell needed?
@@ -88,10 +91,10 @@ key('n', '<Down>',    '<C-w>j')
 key('n', '<Up>',      '<C-w>k')
 key('n', '<Right>',   '<C-w>l')
 --
-key('n', '<S-Left>',  "<C-w>',<")
-key('n', '<S-Right>', "<C-w>',>',")
-key('n', '<S-Down>',  "<C-w>',-")
-key('n', '<S-Up>',    "<C-w>',+")
+key('n', '<S-Left>',  "<C-w><")
+key('n', '<S-Right>', "<C-w>>")
+key('n', '<S-Down>',  "<C-w>-")
+key('n', '<S-Up>',    "<C-w>+")
 
 key('n', '<M-[>',     function() vim.fn.search('^[^[:space:])\\]}]', 'be') end, { desc = 'jump to previous unindented line' })
 key('n', '<M-]>',     function() vim.fn.search('^[^[:space:])\\]}]', 'e') end, { desc = 'jump to next unindented line' })

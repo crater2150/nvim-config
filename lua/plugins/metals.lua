@@ -5,6 +5,7 @@ return {
     'mfussenegger/nvim-dap',
     "hrsh7th/cmp-nvim-lsp",
   },
+  ft = { 'scala', 'sbt' },
   config = function()
     local metals_config = require('metals').bare_config()
     metals_config.init_options.statusBarProvider = "on"

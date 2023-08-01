@@ -48,8 +48,6 @@ local on_attach = function(client, bufnr)
   vim.cmd [[autocmd BufEnter,BufWrite <buffer> lua vim.lsp.codelens.refresh()]]
   vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
   vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float({max_width = 100, focusable = false})]]
-
-  vim.lsp.codelens.refresh()
 end
 
 require("lsp.installer")(on_attach)

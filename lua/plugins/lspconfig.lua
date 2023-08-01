@@ -9,12 +9,7 @@ return {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       'nvim-lua/lsp-status.nvim',
-      {
-        "hrsh7th/cmp-nvim-lsp",
-        cond = function()
-          return require("lazy.core.config").plugins["nvim-cmp"] ~= nil
-        end,
-      },
+      "hrsh7th/cmp-nvim-lsp",
     },
     ---@class PluginLspOpts
     opts = function() return {
@@ -162,6 +157,7 @@ return {
           nls.builtins.completion.vsnip,
           nls.builtins.diagnostics.zsh,
           nls.builtins.formatting.beautysh,
+          nls.builtins.code_actions.gitsigns,
         },
       }
     end,

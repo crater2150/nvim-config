@@ -17,7 +17,7 @@ return {
 	},
 	-- ii / ai
 	'michaeljsmith/vim-indent-object',
-	'airblade/vim-gitgutter',
+	{'lewis6991/gitsigns.nvim', config=true},
 
 	'neovim/nvim-lspconfig',
 

@@ -83,7 +83,11 @@ return {
   },
   { 'nvim-treesitter/playground',
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    cmd = 'TSPlaygroundToggle'
+    cmd = {
+      'TSPlaygroundToggle',
+      'TSHighlightCapturesUnderCursor',
+      'TSNodeUnderCursor',
+    }
   },
   { "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",
