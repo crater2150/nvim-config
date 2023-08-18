@@ -26,9 +26,6 @@ require("lazy").setup("plugins", {
 })
 
 vim.opt.background = "dark"
-vim.g.chroma_italic_style = "bold"
-vim.g.chroma_nontext_dark = 1
-
 vim.opt.number = true
 
 vim.opt.colorcolumn = "+1"
@@ -62,7 +59,7 @@ vim.opt.shortmess = vim.o.shortmess .. "c"
 vim.opt.cursorline = true
 vim.opt.undofile = true
 
-vim.opt.spelllang = 'de'
+vim.opt.spelllang = 'de,en'
 
 vim.opt.termguicolors = true
 vim.opt.pumblend = 10
