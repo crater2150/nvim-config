@@ -11,9 +11,11 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
-      'hrsh7th/vim-vsnip-integ',
+      --  'hrsh7th/cmp-vsnip',
+      --  'hrsh7th/vim-vsnip',
+      --  'hrsh7th/vim-vsnip-integ',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
       'onsails/lspkind.nvim',
       {
         'zbirenbaum/copilot-cmp',
@@ -42,7 +44,8 @@ return {
       cmp.setup({
         snippet = {
           expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
+            --vim.fn["vsnip#anonymous"](args.body)
+            require('luasnip').lsp_expand(args.body)
           end,
         },
         mapping = {
@@ -65,7 +68,7 @@ return {
         },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          { name = 'vsnip' },
+          { name = 'luasnip' },
           { name = "copilot" },
         }, {
           { name = 'buffer' },
