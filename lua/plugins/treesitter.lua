@@ -1,3 +1,7 @@
+local function ts_disable(_, bufnr)
+    return vim.api.nvim_buf_line_count(bufnr) > 5000
+end
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -32,7 +36,7 @@ return {
     },
     ---@type TSConfig
     opts = {
-      highlight = { enable = true },
+      highlight = { enable = true, disable = ts_disable },
       indent = { enable = true },
       ensure_installed = {
         "bash",

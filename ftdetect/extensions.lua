@@ -6,6 +6,7 @@ vim.filetype.add({
     ['kitty.conf'] = 'kitty',
     ['neomuttrc'] = 'neomutt',
     ['template'] = 'sh',
+    ['mbsyncrc'] = 'mbsyncrc',
   },
   pattern = {
     ['${XDG_CONFIG_HOME}/kitty/*.conf'] = 'kitty',
