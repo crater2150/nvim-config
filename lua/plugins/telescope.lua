@@ -20,6 +20,7 @@ return {
       { ',gs',       builtin.git_status,                                  desc = "Git status" },
       { ',s',        builtin.lsp_dynamic_workspace_symbols,               desc = "Symbols" },
       { 'g/',        builtin.live_grep,                                   desc = "Live grep" },
+      { 'g:',        builtin.command_history,                             desc = "Command history" },
       { '<C-/>',     builtin.current_buffer_fuzzy_find,                   desc = "Fuzzy find" },
       { '<leader>*', builtin.grep_string,                                 desc = "Find at cursor" },
       { 'gb',        builtin.buffers,                                     desc = "Switch buffer" },
