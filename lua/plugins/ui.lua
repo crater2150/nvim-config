@@ -12,19 +12,11 @@ return {
 	},
 	{
 		'lukas-reineke/indent-blankline.nvim',
+		main = 'ibl',
 		opts = {
-			char = "",
-			char_highlight_list = {
-				"Whitespace",
-				"CursorLine",
-			},
-			space_char_highlight_list = {
-				"Whitespace",
-				"CursorLine",
-			},
-			show_trailing_blankline_indent = false,
-			show_current_context = true,
-			show_current_context_start = true,
+			whitespace = { highlight = { "Whitespace", "CursorLine" }, remove_blankline_trail = false, },
+			indent = { highlight = { "Whitespace", "CursorLine" }, char = "" },
+			scope = { enabled = true, },
 		},
 	}
 }
