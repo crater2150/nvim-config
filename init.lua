@@ -27,6 +27,7 @@ require("lazy").setup("plugins", {
 
 vim.opt.background = "dark"
 vim.opt.number = true
+vim.opt.title = true
 
 vim.opt.colorcolumn = "+1"
 vim.opt.textwidth = 80
