@@ -1,6 +1,13 @@
 local on_attach = function(args)
-	--Enable completion triggered by <c-x><c-o>
-	vim.bo[args.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+	local client = vim.lsp.get_client_by_id(args.data.client_id)
+	if client.server_capabilities.completionProvider then
+		--Enable completion triggered by <c-x><c-o>
+		vim.bo[args.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+	end
+	if client.server_capabilities.definitionProvider then
+		vim.bo[args.buf].tagfunc = "v:lua.vim.lsp.tagfunc"
+	end
+	--
 
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -34,8 +41,16 @@ local on_attach = function(args)
 
 	vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end, { silent = true, desc = "Toogle debug REPL" })
 
-	vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
-	vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float({max_width = 100, focusable = false})]]
+	if client.server_capabilities.signatureHelpProvider then
+		vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
+		vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float({max_width = 100, focusable = false})]]
+	end
+
+	if client.server_capabilities.documentHighlightingProvider then
+		vim.cmd([[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]])
+		vim.cmd([[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]])
+		vim.cmd([[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]])
+	end
 end
 
 vim.api.nvim_create_autocmd("LspAttach", { callback = on_attach })
