@@ -59,6 +59,7 @@ return {
 	'vim-pandoc/vim-pandoc',
 	'vim-pandoc/vim-pandoc-syntax',
 	'isobit/vim-caddyfile',
+	'Glench/Vim-Jinja2-Syntax',
 	'GEverding/vim-hocon',
 	'nfnty/vim-nftables',
 }
