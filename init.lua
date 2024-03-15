@@ -40,6 +40,8 @@ vim.opt.timeout = false
 
 vim.opt.foldenable = false
 
+vim.opt.diffopt:append("vertical")
+vim.opt.diffopt:append("linematch:50")
 -- todo visualbell needed?
 
 vim.opt.shell = "/bin/zsh"
@@ -47,7 +49,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 vim.opt.listchars = "tab:⇥\\ ,trail:-,nbsp:+,lead:␣"
-vim.opt.list = true
+--vim.opt.list = true
 vim.cmd [[hi link Whitespace Comment]]
 
 vim.opt.wildmode = { "list:longest", "list:full" }
