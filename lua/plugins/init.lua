@@ -8,21 +8,24 @@ return {
 	'tpope/vim-commentary',
 	'tpope/vim-sleuth',
 
-	{"chrisgrieser/nvim-genghis", dependencies = "stevearc/dressing.nvim"},
+	{ "chrisgrieser/nvim-genghis", dependencies = "stevearc/dressing.nvim" },
 
 	-- ic / ac
-	{'glts/vim-textobj-comment',
+	{
+		'glts/vim-textobj-comment',
 		dependencies = { 'kana/vim-textobj-user' }
 	},
 	-- ii / ai
 	'michaeljsmith/vim-indent-object',
 	'neovim/nvim-lspconfig',
 
-	{ 'nvim-telescope/telescope.nvim',
+	{
+		'nvim-telescope/telescope.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 
-	{ 'ray-x/lsp_signature.nvim',
+	{
+		'ray-x/lsp_signature.nvim',
 		config = function()
 			require('lsp_signature').setup({})
 		end
@@ -36,9 +39,10 @@ return {
 	'lambdalisue/suda.vim',
 	'jamessan/vim-gnupg',
 
-	{'lervag/vimtex',
+	{
+		'lervag/vimtex',
 		init = function()
-			vim.g.tex_conceal="agm"
+			vim.g.tex_conceal = "agm"
 			vim.g.vimtex_quickfix_ignorefilters = { 'overfull', 'underfull' }
 			vim.g.vimtex_syntax_enabled = 0
 		end,

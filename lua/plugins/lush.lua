@@ -1,4 +1,4 @@
 return {
 	'rktjmp/lush.nvim',
-  'rktjmp/shipwright.nvim',
+	'rktjmp/shipwright.nvim',
 }

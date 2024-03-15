@@ -6,11 +6,11 @@
 
 vim.api.nvim_create_augroup("KeepCentered", { clear = true })
 vim.api.nvim_create_autocmd("CursorMoved", {
-  group = "KeepCentered",
-  pattern = '*',
-  callback = function() 
-    if vim.o.buftype == '' then
-      vim.cmd([[normal! zz]])
-    end
-  end,
+	group = "KeepCentered",
+	pattern = '*',
+	callback = function()
+		if vim.o.buftype == '' then
+			vim.cmd([[normal! zz]])
+		end
+	end,
 })
