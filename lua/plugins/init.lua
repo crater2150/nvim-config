@@ -2,7 +2,6 @@ return {
 	"folke/which-key.nvim",
 	'pbrisbin/vim-mkdir',
 	'fladson/vim-kitty',
-
 	'tpope/vim-repeat',
 	'tpope/vim-surround',
 	'tpope/vim-characterize',
@@ -17,8 +16,6 @@ return {
 	},
 	-- ii / ai
 	'michaeljsmith/vim-indent-object',
-	{'lewis6991/gitsigns.nvim', config=true},
-
 	'neovim/nvim-lspconfig',
 
 	{ 'nvim-telescope/telescope.nvim',
@@ -34,15 +31,9 @@ return {
 	'folke/trouble.nvim',
 	'folke/lsp-colors.nvim',
 	'nvim-lua/popup.nvim',
-
 	'junegunn/vim-easy-align',
 	'machakann/vim-highlightedyank',
 	'lambdalisue/suda.vim',
-	-- git
-	'lambdalisue/gina.vim',
-	'gregsexton/gitv',
-	'gisphm/vim-gitignore',
-	'sjl/splice.vim',
 	'jamessan/vim-gnupg',
 
 	{'lervag/vimtex',
@@ -62,5 +53,7 @@ return {
 	'Glench/Vim-Jinja2-Syntax',
 	'GEverding/vim-hocon',
 	'nfnty/vim-nftables',
+	'nfnty/vim-nftables',
+	'Everduin94/nvim-quick-switcher',
 }
 --  'powerman/vim-plugin-AnsiEsc',

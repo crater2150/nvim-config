@@ -1,8 +1,9 @@
 return {
 	{
 		'stevearc/dressing.nvim',
+		enabled = true,
 		dependencies = {
-			'nvim-telescope/telescope-ui-select.nvim',
+			--'nvim-telescope/telescope-ui-select.nvim',
 		},
 		opts = {
 			select = {

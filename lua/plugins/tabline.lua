@@ -13,7 +13,7 @@ return {
     tabline = {
       lualine_a = { 'branch' },
       lualine_b = {},
-      lualine_c = { { 'windows', show_filename_only = false, symbols = { modified = " ✏️]", alternate_file = " 🔃", folder = " 📁"} ,}},
+      lualine_c = { { 'buffers', show_filename_only = false, symbols = { modified = " ✏️]", alternate_file = " 🔃", folder = " 📁"} ,}},
       lualine_x = {},
       lualine_y = {},
       lualine_z = {
@@ -35,16 +35,16 @@ return {
       } }
     },
     sections = {
-      lualine_a = { filename },
+      lualine_a = { 'filename' },
       lualine_b = { 'diff', 'diagnostics' },
       lualine_x = { "require'lsp-status'.status()" },
       lualine_y = { 'filetype' },
-      lualine_z = { 'searchcount', 'location' }
+      lualine_z = { 'searchcount', 'selectioncount', 'location' }
     },
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = { filename },
+      lualine_c = { 'filename' },
       lualine_x = { 'location' },
       lualine_y = {},
       lualine_z = {}
