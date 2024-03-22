@@ -1,3 +1,5 @@
+vim.o.textwidth = 120
+
 vim.keymap.set("n", "<leader>o",
 	function() vim.lsp.buf.execute_command({ command = "_typescript.organizeImports", arguments = { vim.fn.expand("%:p") } }) end,
 	{ desc = "Organize imports" }
@@ -58,3 +60,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			{ buffer = true })
 	end
 })
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
