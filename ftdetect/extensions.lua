@@ -1,6 +1,7 @@
 vim.filetype.add({
 	extension = {
 		['vtt'] = 'vtt',
+		['typ'] = 'typst',
 	},
 	filename = {
 		['.scalafmt.conf'] = 'hocon',
