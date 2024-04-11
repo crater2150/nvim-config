@@ -38,7 +38,9 @@ vim.opt.whichwrap = "b,s,<,>,[,],h,l"
 
 vim.opt.timeout = false
 
-vim.opt.foldenable = false
+vim.opt.foldmethod = "expr"
+vim.opt.foldlevel = 99
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.diffopt:append("vertical")
 vim.opt.diffopt:append("linematch:50")
