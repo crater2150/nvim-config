@@ -36,7 +36,7 @@ vim.opt.shiftwidth = 2
 
 vim.opt.whichwrap = "b,s,<,>,[,],h,l"
 
-vim.opt.timeout = false
+--vim.opt.timeout = false
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99
