@@ -1,13 +1,13 @@
 return {
-	'scalameta/nvim-metals',
+	"scalameta/nvim-metals",
 	dependencies = {
-		'nvim-lua/plenary.nvim',
-		'mfussenegger/nvim-dap',
+		"nvim-lua/plenary.nvim",
+		"mfussenegger/nvim-dap",
 		"hrsh7th/cmp-nvim-lsp",
 	},
-	ft = { 'scala', 'sbt' },
+	ft = { "scala", "sbt" },
 	config = function()
-		local metals_config = require('metals').bare_config()
+		local metals_config = require("metals").bare_config()
 		metals_config.init_options.statusBarProvider = "on"
 		metals_config.settings = {
 			showImplicitArguments = true,
@@ -15,7 +15,6 @@ return {
 		}
 		metals_config.on_attach = function(client, bufnr)
 			require("metals").setup_dap()
-			require("my_lsp").on_attach(client, bufnr)
 		end
 		metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 		-- Debug settings if you're using nvim-dap
@@ -40,7 +39,6 @@ return {
 			},
 		}
 
-
 		-- Autocmd that will actually be in charging of starting the whole thing
 		local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 		vim.api.nvim_create_autocmd("FileType", {
@@ -55,5 +53,5 @@ return {
 		})
 
 		return metals_config
-	end
+	end,
 }
