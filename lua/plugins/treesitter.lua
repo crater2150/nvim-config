@@ -81,6 +81,8 @@ return {
 						["ic"] = { query = "@class.inner",     desc = "inner class" },
 						["ap"] = { query = "@parameter.outer", desc = "outer parameter" },
 						["ip"] = { query = "@parameter.inner", desc = "inner parameter" },
+						["ar"] = { query = "@return_type.outer",      desc = "outer return type" },
+						["ir"] = { query = "@return_type.inner",      desc = "inner return type" },
 						-- stylua: ignore end
 					},
 					selection_modes = {
