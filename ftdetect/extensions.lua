@@ -1,18 +1,19 @@
 vim.filetype.add({
 	extension = {
-		['vtt'] = 'vtt',
-		['typ'] = 'typst',
+		["vtt"] = "vtt",
+		["typ"] = "typst",
+		["sc"] = "scala",
 	},
 	filename = {
-		['.scalafmt.conf'] = 'hocon',
-		['kitty.conf'] = 'kitty',
-		['neomuttrc'] = 'neomutt',
-		['template'] = 'sh',
-		['mbsyncrc'] = 'mbsyncrc',
+		[".scalafmt.conf"] = "hocon",
+		["kitty.conf"] = "kitty",
+		["neomuttrc"] = "neomutt",
+		["template"] = "sh",
+		["mbsyncrc"] = "mbsyncrc",
 	},
 	pattern = {
-		['${XDG_CONFIG_HOME}/kitty/*.conf'] = 'kitty',
-		['${XDG_CONFIG_HOME}/kitty/*.session'] = 'kitty-session',
+		["${XDG_CONFIG_HOME}/kitty/*.conf"] = "kitty",
+		["${XDG_CONFIG_HOME}/kitty/*.session"] = "kitty-session",
 	},
 })
 
