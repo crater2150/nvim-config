@@ -25,18 +25,6 @@ require("lazy").setup("plugins", {
 	},
 })
 
-vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-	},
-}
-
 vim.opt.background = "dark"
 vim.opt.number = true
 vim.opt.title = true
@@ -108,8 +96,6 @@ end, { desc = "edit init.lua" })
 command("CD", ":cd %:h", { desc = "cd to current file" })
 command("TrailingSpace", "%s/\\s*$//g", { desc = "remove trailing spaces" })
 
-vim.g.tex_flavor = "latex"
-
 local key = vim.keymap.set
 
 key("n", "<space>", "za", { desc = "toggle fold" })
@@ -144,5 +130,3 @@ key("n", "Y", "y$")
 key("i", "<C-Space>", "<C-x><C-o>", { desc = "completion" })
 key("n", "<C-l>", "<cmd>noh<CR><cmd>redraw!<CR>", { desc = "clear search highlight" })
 key("v", "gs", "<cmd>'<,'>sort<CR>", { desc = "sort selection" })
-
-key({ "n", "x" }, "<M-a>", "<Plug>(EasyAlign)", { desc = "align selection" })
