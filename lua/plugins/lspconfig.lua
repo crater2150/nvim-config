@@ -5,10 +5,10 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			{ "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-			{ "folke/neodev.nvim",  opts = {} },
+			{ "folke/neodev.nvim", opts = {} },
 			"mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			'nvim-lua/lsp-status.nvim',
+			"nvim-lua/lsp-status.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		---@class PluginLspOpts
@@ -29,7 +29,7 @@ return {
 					severity_sort = true,
 				},
 				-- add any global capabilities here
-				capabilities = { require 'lsp-status'.capabilities },
+				capabilities = { require("lsp-status").capabilities },
 				servers = {
 					jsonls = {},
 					lua_ls = {
@@ -49,12 +49,15 @@ return {
 						settings = {
 							pylsp = {
 								plugins = {
-									rope_autoimport = { enabled = true, },
-									isort = { enabled = true, },
-								}
-							}
-						}
-					}
+									rope_autoimport = { enabled = true },
+									isort = { enabled = true },
+								},
+							},
+						},
+					},
+					lemminx = {
+						settings = { xml = { server = { workDir = "~/.cache/lemminx" } } },
+					},
 				},
 				-- you can do any additional lsp server setup here
 				-- return true if you don't want this server to be setup with lspconfig
@@ -80,14 +83,14 @@ return {
 
 			if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
 				opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
-						or function(diagnostic)
-							local icons = require("common").icons.diagnostics
-							for d, icon in pairs(icons) do
-								if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
-									return icon
-								end
+					or function(diagnostic)
+						local icons = require("common").icons.diagnostics
+						for d, icon in pairs(icons) do
+							if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
+								return icon
 							end
 						end
+					end
 			end
 
 			vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
@@ -174,12 +177,12 @@ return {
 			end
 		end,
 	},
-	'mfussenegger/nvim-jdtls',
+	"mfussenegger/nvim-jdtls",
 	{
-		'nvim-lua/lsp-status.nvim',
+		"nvim-lua/lsp-status.nvim",
 		config = function(_, opts)
-			local lsp_status = require('lsp-status')
+			local lsp_status = require("lsp-status")
 			lsp_status.register_progress()
-		end
-	}
+		end,
+	},
 }
