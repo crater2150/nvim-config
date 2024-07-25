@@ -3,6 +3,7 @@ vim.filetype.add({
 		["vtt"] = "vtt",
 		["typ"] = "typst",
 		["sc"] = "scala",
+		["nft"] = "nftables",
 	},
 	filename = {
 		[".scalafmt.conf"] = "hocon",
@@ -10,6 +11,7 @@ vim.filetype.add({
 		["neomuttrc"] = "neomutt",
 		["template"] = "sh",
 		["mbsyncrc"] = "mbsyncrc",
+		["nftables.conf"] = "nftables",
 	},
 	pattern = {
 		["${XDG_CONFIG_HOME}/kitty/*.conf"] = "kitty",
